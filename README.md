@@ -69,7 +69,7 @@ python3 control_server.py 192.168.x.x  # specify host IP
 python3 remote_client.py              # uses default IP
 python3 remote_client.py 192.168.x.x  # specify server IP
 ```
-or in silent mode
+**or in silent mode**
 ```bash
 Start-Process pythonw -ArgumentList "remote_client.py" -WindowStyle Hidden # uses default IP
 Start-Process pythonw -ArgumentList "remote_client.py 192.168.x.x" -WindowStyle Hidden # specify server IP
