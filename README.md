@@ -59,15 +59,20 @@ New-NetFirewallRule -DisplayName "Allow Out 7007" -Direction Outbound -Protocol 
 ### Start the Server (Host/Controller)
 
 ```bash
-python3 server.py              # uses default IP
-python3 server.py 192.168.x.x  # specify host IP
+python3 control_server.py              # uses default IP
+python3 control_server.py 192.168.x.x  # specify host IP
 ```
 
 ### Start the Implant (Windows VM)
 
 ```bash
-python3 client.py              # uses default IP
-python3 client.py 192.168.x.x  # specify server IP
+python3 remote_client.py              # uses default IP
+python3 remote_client.py 192.168.x.x  # specify server IP
+```
+or in silent mode
+```bash
+Start-Process pythonw -ArgumentList "remote_client.py" -WindowStyle Hidden # uses default IP
+Start-Process pythonw -ArgumentList "remote_client.py 192.168.x.x" -WindowStyle Hidden # specify server IP
 ```
 
 ### Available Commands

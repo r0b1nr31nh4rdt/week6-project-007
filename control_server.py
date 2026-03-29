@@ -65,9 +65,12 @@ def tcp_server():
                     print(response_header)
                     continue
 
+                print(f"Response: {response_header}")
                 parts = response_header.rsplit(":", 1)
                 filename = parts[0][4:] # Everything after "get:"
+                print(f"Filename: {filename}")
                 filesize = int(parts[1])
+                print(f"Filesize: {filesize}")
 
                 file_data = b""
                 while len(file_data) < filesize:
