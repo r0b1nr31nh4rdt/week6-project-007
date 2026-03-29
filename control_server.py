@@ -1,5 +1,6 @@
 import socket
 from pathlib import Path
+import sys
 
 def tcp_server():
 
@@ -9,7 +10,8 @@ def tcp_server():
     print("Server: Socket created")
 
     try:
-        server_address = ("192.168.70.6", 7007)
+        host = sys.argv[1] if len(sys.argv) > 1 else "192.168.70.6"
+        server_address = (host, 7007)
         print(f"Server: Binding to {server_address[0]}:{server_address[1]}...")
 
         server_socket.bind(server_address)

@@ -1,4 +1,14 @@
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Mac
 .DS_Store
 
+# Python
+__pychache__/
+*.pyc
 .env
 .venv/
+venv/
