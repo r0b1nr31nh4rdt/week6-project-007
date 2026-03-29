@@ -31,7 +31,7 @@ Controller (Host)                    Implant (Windows VM)
 ## Requirements
 
 - Python 3.x
-- No external dependencies – standard library only (`socket`, `subprocess`, `pathlib`, `sys`)
+- No external dependencies – standard library only (`socket`, `subprocess`, `pathlib`, `sys`, `time`)
 
 ---
 
