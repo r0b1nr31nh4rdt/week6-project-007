@@ -2,6 +2,7 @@ import socket
 import subprocess
 from pathlib import Path
 import sys
+import time
 
 def tcp_client():
     print("client starting")
@@ -86,4 +87,9 @@ def tcp_client():
         client_socket.close()
 
 if __name__ == "__main__":
-    tcp_client()
+    while True:
+        try:
+            tcp_client()
+        except Exception as e:
+            print(f"Disconnected: {e}, reconnecting in 5 seconds...")
+            time.sleep(5)
